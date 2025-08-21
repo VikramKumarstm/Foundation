@@ -12,8 +12,13 @@ public class LeapYear {
         System.out.println("Enter year :");
         int year = sc.nextInt();
 
-        String result = (((year % 4 == 0) && (year % 100 != 0 )) || (year % 400 == 0)) 
-        ? "Leap Year" : "Common Year";
+        // String result = (((year % 4 == 0) && (year % 100 != 0 )) || (year % 400 == 0)) 
+        // ? "Leap Year" : "Common Year";
+
+        // Other way
+
+        String result = ((year % 4 == 0) && (year % 100 != 0)) ? "Leap Year"
+        : (year % 400 == 0) ? "Leap Year" : "Common Year";
 
         System.out.println(result);
 
