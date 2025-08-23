@@ -1,4 +1,5 @@
-// Write a C program to enter a number an
+// Write a C program to enter a number and print it in words.
+
 package Loop;
 
 import java.util.Scanner;
@@ -14,6 +15,7 @@ public class NumtoWord {
 
         int digit, num = 0;
 
+        // Reverse origional Number and store in num variable
         while(n != 0) {
 
             digit = n % 10;
@@ -22,12 +24,12 @@ public class NumtoWord {
 
         }
 
-        int condition;
+        int condition; // store last digit of num
 
         while (num != 0) {
-            condition = num % 10;
+            condition = num % 10;  // calc last digit
 
-            switch (condition) {
+            switch (condition) {  
                 case 0:
                     System.out.print("Zero ");
                     break;
