@@ -1,3 +1,5 @@
+// Write a C program to calculate factorial of a number.
+
 package Loop;
 
 import java.util.Scanner;
