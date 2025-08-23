@@ -18,7 +18,6 @@ public class FindAllRootsQuadraticEquation {
         // Find discriminant of the equation
         discriminant = (b * b) - (4 * a * c);
 
-        //7781955555
         //Find the nature of the discriminant
         if(discriminant > 0) {
             root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
