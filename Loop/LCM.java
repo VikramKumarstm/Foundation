@@ -1,3 +1,5 @@
+// Write a C program to find LCM of two numbers.
+
 package Loop;
 
 import java.util.Scanner;
@@ -12,14 +14,18 @@ public class LCM {
         int num1 = sc.nextInt();
         int num2 = sc.nextInt();
 
-        int min = (num1 > num2) ? num2 : num1;
+        int max = (num1 > num2) ? num1 : num2;
+        int i;
+        i = max;
         int lcm = 1;
 
-        for(int i=1; i<=min; i++) {
-            
-            if(num1 % i == 0 || num2 % i == 0) {
-                lcm *= i;
+        while(true) {
+            if(i % num1 == 0 && i % num2 == 0) {
+                lcm = i;
+                break;
             }
+
+            i += max;
         }
 
         System.out.println("LCM of "+num1+" and "+num2+" = "+ lcm);
