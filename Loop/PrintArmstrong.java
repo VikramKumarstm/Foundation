@@ -9,6 +9,7 @@ public class PrintArmstrong {
         
         Scanner sc = new Scanner(System.in);
 
+        // take input from user
         System.out.println("Enter Uper limit :");
         int n = sc.nextInt();
 
@@ -21,6 +22,7 @@ public class PrintArmstrong {
             int origionalNum = i;
             count = arm = 0;
 
+            // Calculate number of digit
             while(num != 0) {
 
                 digit = num % 10;
@@ -29,6 +31,7 @@ public class PrintArmstrong {
 
             }
 
+            // calculate number is armstrong or not
             while(origionalNum > 0) {
 
                 digit = origionalNum % 10;
@@ -37,6 +40,7 @@ public class PrintArmstrong {
 
             }
 
+            // check if orgional number is equal to armstrong then print the number
             if(i == arm) {
                 System.out.print(i +" ");
             }
