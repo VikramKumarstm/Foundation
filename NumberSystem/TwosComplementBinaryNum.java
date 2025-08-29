@@ -1,3 +1,5 @@
+// Write a C program to find two’s complement of a binary number.
+
 package NumberSystem;
 
 import java.util.Scanner;
@@ -22,13 +24,13 @@ public class TwosComplementBinaryNum {
 
         }
 
-        System.out.println(onesComplement);
+        System.out.println("One's Complement : "+ onesComplement);
 
         for(i=binary.length()-1; i>=0; i--) {
 
             if(onesComplement.charAt(i) == '1' && carry == 1) {
 
-                twosComplement = '0';
+                twosComplement += '0';
 
             } else if(onesComplement.charAt(i) == '0' && carry == 1) {
 
@@ -37,12 +39,15 @@ public class TwosComplementBinaryNum {
 
             } else {
 
-                twosComplement += onesComplement;
-
+                twosComplement += onesComplement.charAt(i);
             }
 
         }
 
-        System.out.println(twosComplement);
+        for(i=twosComplement.length()-1; i>=0; i--) {
+            System.out.print(twosComplement.charAt(i)+" ");
+        }
+
+        // System.out.println("Two's complement :"+ twosComplement);
     }
 }
