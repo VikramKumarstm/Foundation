@@ -10,33 +10,37 @@ public class BinaryToOctal {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter binary number :");
-        String binary = sc.nextLine();
-        String revBinary = "";
+        long binary = sc.nextLong();
 
-        for(int i=binary.length()-1; i>=0; i--) {
-            revBinary += binary.charAt(i);
-        }
-        System.out.println("rev binary :"+revBinary);
+        int octalConstant[] = {0, 1, 10, 11, 100, 101, 110, 111};
 
-        int i;
-        int octal = 1;
-        
-        System.out.println("length :"+ revBinary.length());
-        for(i=0; i<=revBinary.length()-1; i++) {
+        long tempBinary, octal = 0;
+        int digit, place = 1;
 
-            System.out.println(i);
+        tempBinary = binary;
 
-            if(revBinary.charAt(i) == '1') {
+        while (tempBinary != 0) {
+            digit = (int) tempBinary % 1000;
 
-                octal += i*2;
+            for(int i=0; i<8; i++) {
 
-            } else {
+                if(octalConstant[i] == digit) {
 
-                octal *= i;
+                    octal = (i * place) + octal;
+                    break;
+
+                }
+
             }
 
-        }
+            // remove last three digit of binary
+            tempBinary /= 1000;
 
+            // Increase the place value
+            place *= 10;
+
+        }
+        
         System.out.println("Octal number of "+binary+" = "+ octal);
 
     }
